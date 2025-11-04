@@ -27,7 +27,7 @@ public class CursoServiceImpl extends GenericServiceImpl<Curso,Long> implements 
 
     @Override
     public Curso crearCurso(NuevoCursoRequest request){
-        Profesor profesor = profesorRepository.findBy(request.getProfesorId()).orElseThrow(() -> new IllegalArgumentException("Profesor no encontrado"));
+        Profesor profesor = profesorRepository.findById(request.getProfesorId()).orElseThrow(() -> new IllegalArgumentException("Profesor no encontrado"));
         Curso curso = Curso.builder()
                 .nombre(request.getNombre())
                 .profesor(profesor)

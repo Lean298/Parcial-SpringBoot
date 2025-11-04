@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
-public class EstudianteServiceImpl extends GenericServiceImpl<Estudiante,Long>{
+public class EstudianteServiceImpl extends GenericServiceImpl<Estudiante,Long> implements EstudianteService {
 
     private final EstudianteRepository estudianteRepository;
 
